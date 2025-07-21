@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience | Esak Ebrahim</title>
+  <link rel="stylesheet" href="experience.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Scroll to top -->
+  <button id="scrollToTop"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">ESAK</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button id="themeToggle"><i class="fas fa-moon"></i></button>
+        </li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Experience Section -->
+  <section class="section" id="experience" data-aos="fade-up">
+    <h2 class="section-title">
+      <span id="typed"></span>
+    </h2>
+    <div class="experience-grid">
+      <!-- Experience Cards -->
+      <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Frontend Developer Intern</h3>
+        <p class="company">Farka ICT | Jan 2025 – Mar 2025</p>
+        <p>Contributed to the development of a Library Management System using HTML, CSS, JavaScript, PHP, and MySQL. Built responsive interfaces and collaborated with backend developers for seamless integration.</p>
+        <ul class="skills">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>MySQL</li>
+        </ul>
+      </div>
+
+      <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Freelance Web Developer</h3>
+        <p class="company">Self-Employed | 2024 – Present</p>
+        <p>Designed and deployed modern web applications using technologies like TailwindCSS, React, and MongoDB. Delivered tailored solutions for clients with a focus on UI/UX and performance.</p>
+        <ul class="skills">
+          <li>React</li><li>TailwindCSS</li><li>MongoDB</li><li>JavaScript</li>
+        </ul>
+      </div>
+
+      <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>Full-Stack Developer (Training)</h3>
+        <p class="company">Independent Projects</p>
+        <p>Built and maintained full-stack applications integrating both frontend and backend technologies. Gained hands-on experience with frameworks and databases.</p>
+        <ul class="skills">
+          <li>Python</li><li>Java</li><li>C++</li><li>Frappe Framework</li>
+        </ul>
+      </div>
+
+      <div class="experience-card" data-aos="fade-up" data-aos-delay="400">
+        <h3>Software Developer Intern</h3>
+        <p class="company">Tech Innovators | Jun 2024 – Aug 2024</p>
+        <p>Developed scalable backend services and REST APIs using Python and MongoDB. Collaborated with cross-functional teams to optimize application performance.</p>
+        <ul class="skills">
+          <li>Python</li><li>MongoDB</li><li>REST APIs</li><li>Git</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Typing animation
+    new Typed('#typed', {
+      strings: ['Professional Experience'],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: false
+    });
+
+    // Hamburger toggle
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('active');
+    });
+
+    // Scroll to top
+    const scrollBtn = document.getElementById('scrollToTop');
+    window.onscroll = () => {
+      scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    };
+    scrollBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Preloader
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').style.display = 'none';
+    });
+
+    // Dark mode
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>

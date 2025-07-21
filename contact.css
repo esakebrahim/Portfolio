@@ -1,0 +1,157 @@
+/* contact.css */
+
+:root {
+    --bg: #0f172a;
+    --text: #f8fafc;
+    --primary: #0ea5e9;
+    --accent: #38bdf8;
+    --gradient: linear-gradient(135deg, #0ea5e9, #38bdf8);
+    --shadow: 0 10px 20px rgba(14, 165, 233, 0.25);
+    --font: 'Inter', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    background-color: var(--bg);
+    color: var(--text);
+    scroll-behavior: smooth;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+  }
+  
+  .nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    color: var(--accent);
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text);
+  }
+  
+  /* Section */
+  .contact-section {
+    padding: 120px 20px 60px;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #cbd5e1;
+  }
+  
+  .contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .contact-info p {
+    font-size: 1rem;
+    margin: 0.8rem 0;
+  }
+  
+  .contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  .send-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background: var(--gradient);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+  }
+  
+  .send-btn:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #1e293b;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .nav-links.show {
+      display: flex;
+    }
+    .hamburger {
+      display: block;
+    }
+  }
+  

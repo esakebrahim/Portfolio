@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Esak Ebrahim</title>
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">ESAK</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section class="section" id="about" data-aos="fade-up">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-wrapper">
+      <div class="about-image" data-aos="zoom-in">
+        <div class="circle-bg">
+          <img src="assets/images/esak2.jpg" alt="Esak Ebrahim" class="profile-pic" />
+        </div>
+      </div>
+      <div class="about-text" data-aos="fade-left">
+        <p class="intro typing"></p>
+        <p>
+          🎓 I graduated with a BSc in Computer Science from Dilla University. I’ve built real-world projects like a full Library Management System and interned at Farka ICT. I'm also a graduate of the 5 Million Coders program.
+        </p>
+        <p>
+          💬 I speak Amharic fluently and have working knowledge of English. My passion lies in building interactive user experiences, crafting backend APIs, and continuously learning.
+        </p>
+
+        <a href="assets/EsakCv.pdf" download="EsakCv.pdf" class="btn cv-btn">
+            <i class="fas fa-download"></i> Download CV
+          </a>
+          
+      </div>
+    </div>
+
+    <!-- Experience Timeline -->
+    <section class="experience-section" data-aos="fade-up">
+      <h3>📅 Experience Timeline</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="timeline-content">
+            <h4>Frontend Developer Intern</h4>
+            <span class="date">Farka ICT — 2023 (2 months)</span>
+            <p>Contributed to the development of a robust Library Management System using PHP and JavaScript.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="timeline-content">
+            <h4>Bachelor’s Degree in Computer Science</h4>
+            <span class="date">Dilla University — 2024</span>
+            <p>Graduated with a focus on software development and web technologies.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-icon"><i class="fas fa-certificate"></i></div>
+          <div class="timeline-content">
+            <h4>Web Development Certificate</h4>
+            <span class="date">5 Million Coders — 2023</span>
+            <p>Completed intensive web development training focusing on full-stack technologies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <div class="skills-box" data-aos="fade-up">
+      <h3>⚙️ Technical Skills</h3>
+      <ul class="skills-grid">
+        <li><i class="fab fa-html5"></i> HTML</li>
+        <li><i class="fab fa-css3-alt"></i> CSS</li>
+        <li><i class="fab fa-js-square"></i> JavaScript</li>
+        <li><i class="fab fa-react"></i> React</li>
+        <li><i class="fab fa-node-js"></i> Node.js</li>
+        <li><i class="fab fa-php"></i> PHP</li>
+        <li><i class="fas fa-database"></i> MySQL</li>
+        <li><i class="fas fa-code"></i> C++</li>
+        <li><i class="fab fa-python"></i> Python</li>
+        <li><i class="fas fa-leaf"></i> MongoDB</li>
+        <li><i class="fas fa-code-branch"></i> Git & GitHub</li>
+        <li><i class="fas fa-layer-group"></i> Frappe</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    document.getElementById('downloadCV').addEventListener('click', function (e) {
+      e.preventDefault();
+  
+      fetch('assets/EsakCv.pdf')
+        .then(response => response.blob())
+        .then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = url;
+          a.download = 'EsakCv.pdf';
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+        })
+        .catch(() => alert('Failed to download CV. Please try again later.'));
+    });
+  </script>
+  
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Hamburger toggle
+    document.getElementById("hamburger").addEventListener("click", () => {
+      document.getElementById("navLinks").classList.toggle("active");
+    });
+
+    // Typing Animation
+    const typingElement = document.querySelector(".intro.typing");
+    const typingText = "👋 Hello, I’m Esak Ebrahim Din, a Full-Stack Developer from Ethiopia with a love for clean code and purposeful design.";
+    let i = 0;
+
+    function typeWriter() {
+      if (i < typingText.length) {
+        typingElement.textContent += typingText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+      }
+    }
+    typeWriter();
+
+    // Dark mode toggle
+    const toggleBtn = document.getElementById("darkModeToggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      // Change icon
+      if (document.body.classList.contains("dark-mode")) {
+        toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    });
+  </script>
+</body>
+</html>
